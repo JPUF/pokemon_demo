@@ -1,0 +1,16 @@
+Flutter dev talk outline
+
+Versions of the Pokemon app
+1. Basic one page static app.
+    Show off Widgets
+    Basic app entry point
+    Running on different devices.
+    Auto-update on save
+    etc
+2. Multi page static app. Mobile oriented.
+    Shows basic navigation.
+    Bottom Nav Bar. Doesn't look good on web.
+3. Multi page static app. Cross platform.
+    Responsive design.
+4. Move towards non-static stuff.
+
