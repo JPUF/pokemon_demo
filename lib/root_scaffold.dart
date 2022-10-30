@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon_demo/home/home_page.dart';
+import 'package:pokemon_demo/pages/type/type_page.dart';
+
+import 'pages/home/home_page.dart';
 
 class RootScaffold extends StatefulWidget {
   const RootScaffold({super.key});
@@ -12,7 +14,7 @@ class _RootScaffoldState extends State<RootScaffold> {
   int _selectedIndex = 0;
   static const List<Widget> _pageWidgets = <Widget>[
     HomePage(),
-    Text('Index 1: Business'),
+    TypePage(),
     Text('Index 2: School'),
   ];
 
@@ -38,8 +40,8 @@ class _RootScaffoldState extends State<RootScaffold> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.local_fire_department),
+            label: 'Types',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
