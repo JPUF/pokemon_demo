@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum Type {
+enum PokemonType {
   normal('Normal', Colors.grey),
   fire('Fire', Colors.red),
   water('Water', Colors.blue),
@@ -24,5 +24,5 @@ enum Type {
   final String name;
   final Color color;
 
-  const Type(this.name, this.color);
+  const PokemonType(this.name, this.color);
 }

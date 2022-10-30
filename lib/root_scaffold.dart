@@ -12,11 +12,11 @@ class RootScaffold extends StatefulWidget {
 
 class _RootScaffoldState extends State<RootScaffold> {
   int _selectedIndex = 0;
-  static const List<Widget> _pageWidgets = <Widget>[
-    HomePage(),
-    TypePage(),
-    Text('Index 2: School'),
-  ];
+  static const Map<String, Widget> _pageMap = {
+    'Pokémon Home': HomePage(),
+    'Pokémon Types': TypePage(),
+    'Pokémon Other': Text('Third page')
+  };
 
   void _onItemTapped(int index) {
     setState(() {
@@ -28,10 +28,10 @@ class _RootScaffoldState extends State<RootScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pokémon Demo App'),
+        title: Text(_pageMap.keys.elementAt(_selectedIndex)),
       ),
       body: Center(
-        child: _pageWidgets.elementAt(_selectedIndex),
+        child: _pageMap.values.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -44,8 +44,8 @@ class _RootScaffoldState extends State<RootScaffold> {
             label: 'Types',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.add),
+            label: 'Other',
           ),
         ],
         currentIndex: _selectedIndex,
