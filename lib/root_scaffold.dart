@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon_demo/pages/species/species_page.dart';
 import 'package:pokemon_demo/pages/type/type_page.dart';
 
 import 'pages/home/home_page.dart';
@@ -15,7 +16,7 @@ class _RootScaffoldState extends State<RootScaffold> {
   static const Map<String, Widget> _pageMap = {
     'Pokémon Home': HomePage(),
     'Pokémon Types': TypePage(),
-    'Pokémon Other': Text('Third page')
+    'Pokémon Species': SpeciesPage()
   };
 
   void _onItemTapped(int index) {
@@ -44,8 +45,8 @@ class _RootScaffoldState extends State<RootScaffold> {
             label: 'Types',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: 'Other',
+            icon: Icon(Icons.pets),
+            label: 'Species',
           ),
         ],
         currentIndex: _selectedIndex,
