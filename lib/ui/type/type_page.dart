@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon_demo/data/models/pokemon_type.dart';
 
+import '../components/pokemon_type_box.dart';
+
 class TypePage extends StatelessWidget {
   const TypePage({Key? key}) : super(key: key);
 
@@ -10,18 +12,8 @@ class TypePage extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
-          children: PokemonType.values
-              .map((t) => Container(
-                    width: 100,
-                    alignment: AlignmentDirectional.center,
-                    padding: const EdgeInsets.all(4),
-                    color: t.color,
-                    child: Text(
-                      t.name,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ))
-              .toList(),
+          children:
+              PokemonType.values.map((t) => PokemonTypeBox(type: t)).toList(),
         ),
       ),
     );

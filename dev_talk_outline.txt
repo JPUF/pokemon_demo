@@ -11,7 +11,8 @@ Branches
     Shows basic navigation.
     Bottom Nav Bar. Doesn't look good on web.
 3. Static app. Improved implementation
-    Code reuse. Refactor as Widgets
+    Code reuse. Refactor as Widgets (replace Type boxes)
+        Improves indentation troubles.
     Scrolling.
 4. Move towards non-static stuff. + responsive
 
