@@ -13,6 +13,7 @@ Branches
 3. Static app. Improved implementation
     Code reuse. Refactor as Widgets (replace Type boxes)
         Improves indentation troubles.
+        Performance improvements (Pokemon type column, build function).
     Scrolling.
 4. Move towards non-static stuff. + responsive
 
