@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon_demo/pages/species/species_page.dart';
-import 'package:pokemon_demo/pages/type/type_page.dart';
 
-import 'pages/home/home_page.dart';
+import 'ui/home/home_page.dart';
+import 'ui/species/species_page.dart';
+import 'ui/type/type_page.dart';
 
 class RootScaffold extends StatefulWidget {
   const RootScaffold({super.key});
