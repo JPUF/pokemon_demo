@@ -11,7 +11,7 @@ class SpeciesPage extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Image(
               width: 150,
@@ -19,7 +19,7 @@ class SpeciesPage extends StatelessWidget {
               fit: BoxFit.fitWidth,
             ),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.center,
               children:  const [
                 Text('Ludicolo', style: TextStyle(fontSize: 32)),
