@@ -1,16 +1,20 @@
 Flutter dev talk outline
 
-Versions of the Pokemon app
-1. Basic one page static app.
+Branches
+1. Default counter app.
     Show off Widgets
     Basic app entry point
     Running on different devices.
     Auto-update on save
     etc
-2. Multi page static app. Mobile oriented.
+2. Multi page static app. Naive implementation
     Shows basic navigation.
     Bottom Nav Bar. Doesn't look good on web.
-3. Multi page static app. Cross platform.
-    Responsive design.
-4. Move towards non-static stuff.
+3. Static app. Improved implementation
+    Code reuse. Refactor as Widgets (replace Type boxes)
+        Improves indentation troubles.
+        Performance improvements (Pokemon type column, build function).
+    Scrolling.
+        SingleChildScrollView vs ListView
+4. Move towards non-static stuff. + responsive
 

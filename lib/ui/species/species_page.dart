@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon_demo/data/models/pokemon_type.dart';
+import 'package:pokemon_demo/ui/components/pokemon_type_box.dart';
 
 class SpeciesPage extends StatelessWidget {
   const SpeciesPage({Key? key}) : super(key: key);
@@ -20,30 +21,12 @@ class SpeciesPage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
-              children:  [
-                const Text('Ludicolo', style: TextStyle(fontSize: 32)),
-                const Text('National № 272'),
-                const Text('The Carefree Pokémon!'),
-                Container(
-                  width: 100,
-                  alignment: AlignmentDirectional.center,
-                  padding: const EdgeInsets.all(4),
-                  color: PokemonType.grass.color,
-                  child: Text(
-                    PokemonType.grass.name,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Container(
-                  width: 100,
-                  alignment: AlignmentDirectional.center,
-                  padding: const EdgeInsets.all(4),
-                  color: PokemonType.water.color,
-                  child: Text(
-                    PokemonType.water.name,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
+              children:  const [
+                Text('Ludicolo', style: TextStyle(fontSize: 32)),
+                Text('National № 272'),
+                Text('The Carefree Pokémon!'),
+                PokemonTypeBox(type: PokemonType.grass),
+                PokemonTypeBox(type: PokemonType.water),
               ],
             )
           ],
