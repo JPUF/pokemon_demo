@@ -18,7 +18,11 @@ class TypePage extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              Text('${randomType.name} is the best type!'),
+              Text(
+                '${randomType.name} is the best type!',
+                style: const TextStyle(fontSize: 32),
+              ),
+              const SizedBox(height: 16),
               const PokemonTypesColumn(),
             ],
           ),
