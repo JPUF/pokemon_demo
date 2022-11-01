@@ -12,14 +12,16 @@ class TypePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final int randomTypeIndex = Random().nextInt(PokemonType.values.length);
     final PokemonType randomType = PokemonType.values[randomTypeIndex];
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Text('${randomType.name} is the best type!'),
-            const PokemonTypesColumn(),
-          ],
+    return SingleChildScrollView(
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              Text('${randomType.name} is the best type!'),
+              const PokemonTypesColumn(),
+            ],
+          ),
         ),
       ),
     );

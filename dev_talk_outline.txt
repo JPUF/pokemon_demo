@@ -15,5 +15,6 @@ Branches
         Improves indentation troubles.
         Performance improvements (Pokemon type column, build function).
     Scrolling.
+        SingleChildScrollView vs ListView
 4. Move towards non-static stuff. + responsive
 
