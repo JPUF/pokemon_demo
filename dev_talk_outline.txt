@@ -24,6 +24,8 @@ Branches
 5. State management intro
     Pokémon model & list in repository
     Species widget
+    Randomise with business logic in UI.
+        Convert to stateful. _pokemon in the state.
 
 
 
