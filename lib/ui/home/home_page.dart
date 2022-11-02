@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: const [
-            Image(image: AssetImage('assets/logo.png')),
+            Image(image: AssetImage('assets/logo.png'), width: 300),
             Text(
               'Pokémon is a series of video games developed by Game Freak and published by Nintendo and The Pokémon Company under the Pokémon media franchise!',
             ),
