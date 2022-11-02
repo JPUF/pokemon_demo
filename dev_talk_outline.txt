@@ -23,7 +23,7 @@ Branches
     Title visibility
 5. State management intro
     Pokémon model & list in repository
-    BLoC
+    Species widget
 
 
 
