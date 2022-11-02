@@ -16,7 +16,7 @@ Branches
         Performance improvements (Pokemon type column, build function).
     Scrolling.
         SingleChildScrollView vs ListView
-4. Move towards non-static stuff. + responsive
+4. Platform responsive design
     Show LayoutBuilder constraints (constraints.maxWidth > 900)
     Refactor for BoxConstraints extension isMobile
     Nullable appBar actions method, TextButtons
