@@ -21,6 +21,9 @@ Branches
     Refactor for BoxConstraints extension isMobile
     Nullable appBar actions method, TextButtons
     Title visibility
+5. State management intro
+    Pokémon model & list in repository
+    BLoC
 
 
 
