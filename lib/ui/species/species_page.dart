@@ -1,35 +1,44 @@
-import 'package:flutter/material.dart';
-import 'package:pokemon_demo/data/models/pokemon_type.dart';
-import 'package:pokemon_demo/ui/components/pokemon_type_box.dart';
+import 'dart:math';
 
-class SpeciesPage extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:pokemon_demo/data/repositories/pokemon_repository.dart';
+
+import '../../data/models/pokemon.dart';
+import '../components/species_widget.dart';
+
+class SpeciesPage extends StatefulWidget {
   const SpeciesPage({Key? key}) : super(key: key);
 
   @override
+  State<SpeciesPage> createState() => _SpeciesPageState();
+}
+
+class _SpeciesPageState extends State<SpeciesPage> {
+  Pokemon _pokemon = PokemonRepository.pokemonList.first;
+
+  @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Image(
-              width: 150,
-              image: AssetImage('assets/ludicolo.png'),
-              fit: BoxFit.fitWidth,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children:  const [
-                Text('Ludicolo', style: TextStyle(fontSize: 32)),
-                Text('National № 272'),
-                Text('The Carefree Pokémon!'),
-                PokemonTypeBox(type: PokemonType.grass),
-                PokemonTypeBox(type: PokemonType.water),
-              ],
-            )
-          ],
+    return SingleChildScrollView(
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              TextButton(
+                onPressed: () {
+                  final randomIndex =
+                      Random().nextInt(PokemonRepository.pokemonList.length);
+                  final randomNewPokemon =
+                      PokemonRepository.pokemonList[randomIndex];
+                  setState(() {
+                    _pokemon = randomNewPokemon;
+                  });
+                },
+                child: const Text('Randomise!'),
+              ),
+              SpeciesWidget(pokemon: _pokemon),
+            ],
+          ),
         ),
       ),
     );
