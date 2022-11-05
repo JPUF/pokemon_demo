@@ -1,10 +1,14 @@
 part of 'pokemon_bloc.dart';
 
 @immutable
-class PokemonState {
-  final Pokemon? pokemon;
+abstract class PokemonState {
+  const PokemonState();
+}
 
-  const PokemonState.initial() : pokemon = null;
+class InitialPokemonState extends PokemonState {}
 
-  const PokemonState(this.pokemon);
+class PopulatedPokemonState extends PokemonState {
+  final Pokemon pokemon;
+
+  const PopulatedPokemonState(this.pokemon);
 }

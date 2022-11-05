@@ -10,7 +10,7 @@ part 'pokemon_event.dart';
 part 'pokemon_state.dart';
 
 class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
-  PokemonBloc() : super(const PokemonState.initial()) {
+  PokemonBloc() : super(InitialPokemonState()) {
     on<GetRandomPokemon>(_getRandomPokemon);
   }
 
@@ -20,6 +20,6 @@ class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
   ) {
     final randomIndex = Random().nextInt(PokemonRepository.pokemonList.length);
     final randomNewPokemon = PokemonRepository.pokemonList[randomIndex];
-    emit(PokemonState(randomNewPokemon));
+    emit(PopulatedPokemonState(randomNewPokemon));
   }
 }
