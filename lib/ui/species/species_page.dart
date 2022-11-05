@@ -3,18 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokemon_demo/data/repositories/pokemon_repository.dart';
 
 import '../../data/blocs/pokemon_bloc.dart';
-import '../../data/models/pokemon.dart';
 import '../components/species_widget.dart';
 
-class SpeciesPage extends StatefulWidget {
+class SpeciesPage extends StatelessWidget {
   const SpeciesPage({Key? key}) : super(key: key);
-
-  @override
-  State<SpeciesPage> createState() => _SpeciesPageState();
-}
-
-class _SpeciesPageState extends State<SpeciesPage> {
-  Pokemon _pokemon = PokemonRepository.pokemonList.first;
 
   @override
   Widget build(BuildContext context) {
