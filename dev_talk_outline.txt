@@ -42,6 +42,7 @@ Branches
 9. Network Loading state
     New LoadingPokemonState concrete class
     Show CircularProgressIndicator in SpeciesPage
+10. Network image
     
 
 
