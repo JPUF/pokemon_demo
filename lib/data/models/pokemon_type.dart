@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+@JsonEnum(valueField: 'name')
 enum PokemonType {
-  normal('Normal', Colors.grey),
-  fire('Fire', Colors.red),
-  water('Water', Colors.blue),
-  electric('Electric', Colors.yellow),
-  grass('Grass', Colors.green),
-  ice('Ice', Colors.lightBlueAccent),
-  fighting('Fighting', Color.fromRGBO(112, 22, 4, 1)),
-  poison('Poison', Colors.purple),
-  ground('Ground', Colors.amber),
-  flying('Flying', Color.fromRGBO(61, 81, 218, 1)),
-  psychic('Psychic', Colors.pink),
-  bug('Bug', Colors.lightGreenAccent),
-  rock('Rock', Color.fromRGBO(227, 183, 126, 1)),
-  ghost('Ghost', Colors.deepPurple),
-  dragon('Dragon', Color.fromRGBO(95, 0, 229, 1)),
-  dark('Dark', Colors.brown),
-  steel('Steel', Color.fromRGBO(163, 163, 163, 1)),
-  fairy('Fairy', Colors.pinkAccent),
+  normal('normal', Colors.grey),
+  fire('fire', Colors.red),
+  water('water', Colors.blue),
+  electric('electric', Colors.yellow),
+  grass('grass', Colors.green),
+  ice('ice', Colors.lightBlueAccent),
+  fighting('fighting', Color.fromRGBO(112, 22, 4, 1)),
+  poison('poison', Colors.purple),
+  ground('ground', Colors.amber),
+  flying('flying', Color.fromRGBO(61, 81, 218, 1)),
+  psychic('psychic', Colors.pink),
+  bug('bug', Colors.lightGreenAccent),
+  rock('rock', Color.fromRGBO(227, 183, 126, 1)),
+  ghost('ghost', Colors.deepPurple),
+  dragon('dragon', Color.fromRGBO(95, 0, 229, 1)),
+  dark('dark', Colors.brown),
+  steel('steel', Color.fromRGBO(163, 163, 163, 1)),
+  fairy('fairy', Colors.pinkAccent),
   ;
 
   final String name;
