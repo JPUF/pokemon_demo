@@ -34,6 +34,7 @@ Branches
     Import json_serializable, json_annotation, and build_runner
     Convert the pokemon model class and pokemon_type enum
     flutter pub run build_runner build --delete-conflicting-outputs
+    explain the PokemonType tree.
 
 
 
