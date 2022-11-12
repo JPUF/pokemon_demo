@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon_demo/data/models/pokemon.dart';
+import 'package:pokemon_demo/data/models/pokemon/pokemon.dart';
+import 'package:pokemon_demo/data/models/pokemonType/pokemon_type_slot.dart';
 
-import '../../data/models/pokemon_type.dart';
+import '../../data/models/pokemonType/pokemon_type.dart';
 import 'pokemon_type_box.dart';
 
 class SpeciesWidget extends StatelessWidget {
@@ -24,7 +25,7 @@ class SpeciesWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(pokemon.name, style: const TextStyle(fontSize: 32)),
-            Text('National № ${pokemon.number}'),
+            Text('National № ${pokemon.id}'),
             _typeColumn(pokemon.types),
           ],
         )
@@ -32,9 +33,9 @@ class SpeciesWidget extends StatelessWidget {
     );
   }
 
-  Column _typeColumn(List<PokemonType> types) {
+  Column _typeColumn(List<PokemonTypeSlot> types) {
     return Column(
-      children: types.map((t) => PokemonTypeBox(type: t)).toList(),
+      children: types.map((t) => PokemonTypeBox(type: t.type.name)).toList(),
     );
   }
 }

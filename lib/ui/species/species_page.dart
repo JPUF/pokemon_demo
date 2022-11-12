@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokemon_demo/data/repositories/pokemon_repository.dart';
 
 import '../../data/blocs/pokemon_bloc.dart';
-import '../../data/models/pokemon.dart';
+import '../../data/models/pokemon/pokemon.dart';
 import '../components/species_widget.dart';
 
 class SpeciesPage extends StatelessWidget {

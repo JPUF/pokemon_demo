@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../models/pokemon.dart';
+import '../models/pokemon/pokemon.dart';
 import '../repositories/pokemon_repository.dart';
 
 part 'pokemon_event.dart';
