@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
@@ -14,12 +12,13 @@ class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
     on<GetRandomPokemon>(_getRandomPokemon);
   }
 
-  void _getRandomPokemon(
+  final _pokemonRepository = PokemonRepository();
+
+  Future<void> _getRandomPokemon(
     GetRandomPokemon event,
     Emitter<PokemonState> emit,
-  ) {
-    final randomIndex = Random().nextInt(PokemonRepository.pokemonList.length);
-    final randomNewPokemon = PokemonRepository.pokemonList[randomIndex];
-    emit(PopulatedPokemonState(randomNewPokemon));
+  ) async {
+    final networkResult = await _pokemonRepository.getRandomPokemon();
+    emit(PopulatedPokemonState(networkResult));
   }
 }

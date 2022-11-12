@@ -3,6 +3,10 @@ import 'package:pokemon_demo/data/models/pokemonType/pokemon_type_slot.dart';
 import 'package:pokemon_demo/data/models/pokemonType/pokemon_type_wrapper.dart';
 
 import '../models/pokemon/pokemon.dart';
+import 'dart:math';
+
+
+import '../network/pokemon_service.dart';
 
 class PokemonRepository {
   static List<Pokemon> pokemonList = [
@@ -30,4 +34,11 @@ class PokemonRepository {
       id: 133,
     ),
   ];
+
+  final PokemonService _service = PokemonService();
+
+  Future<Pokemon> getRandomPokemon() async {
+    final randomPokemonNumber = 1 + Random().nextInt(905);
+    return _service.getPokemon(randomPokemonNumber);
+  }
 }
