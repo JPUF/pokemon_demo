@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:pokemon_demo/data/models/pokemon_type.dart';
+import 'package:pokemon_demo/data/models/pokemonType/pokemon_type.dart';
 
 import '../components/pokemon_type_box.dart';
 

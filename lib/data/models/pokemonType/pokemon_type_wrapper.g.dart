@@ -1,23 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'pokemon.dart';
+part of 'pokemon_type_wrapper.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Pokemon _$PokemonFromJson(Map<String, dynamic> json) => Pokemon(
-      name: json['name'] as String,
-      types: (json['types'] as List<dynamic>)
-          .map((e) => $enumDecode(_$PokemonTypeEnumMap, e))
-          .toList(),
-      number: json['number'] as int,
+PokemonTypeWrapper _$PokemonTypeWrapperFromJson(Map<String, dynamic> json) =>
+    PokemonTypeWrapper(
+      name: $enumDecode(_$PokemonTypeEnumMap, json['name']),
     );
 
-Map<String, dynamic> _$PokemonToJson(Pokemon instance) => <String, dynamic>{
-      'name': instance.name,
-      'types': instance.types.map((e) => _$PokemonTypeEnumMap[e]!).toList(),
-      'number': instance.number,
+Map<String, dynamic> _$PokemonTypeWrapperToJson(PokemonTypeWrapper instance) =>
+    <String, dynamic>{
+      'name': _$PokemonTypeEnumMap[instance.name]!,
     };
 
 const _$PokemonTypeEnumMap = {
