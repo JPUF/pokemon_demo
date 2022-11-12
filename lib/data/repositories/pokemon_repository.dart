@@ -1,11 +1,33 @@
-import 'package:pokemon_demo/data/models/pokemon_type.dart';
+import 'package:pokemon_demo/data/models/pokemonType/pokemon_type.dart';
+import 'package:pokemon_demo/data/models/pokemonType/pokemon_type_slot.dart';
+import 'package:pokemon_demo/data/models/pokemonType/pokemon_type_wrapper.dart';
 
-import '../models/pokemon.dart';
+import '../models/pokemon/pokemon.dart';
 
 class PokemonRepository {
   static List<Pokemon> pokemonList = [
-    Pokemon(name: 'Ludicolo', types: [PokemonType.grass, PokemonType.water], number: 272),
-    Pokemon(name: 'Gengar', types: [PokemonType.ghost, PokemonType.poison], number: 94),
-    Pokemon(name:'Eevee', types: [PokemonType.normal], number: 133),
+    Pokemon(
+      name: 'Ludicolo',
+      types: [
+        PokemonTypeSlot(type: PokemonTypeWrapper(name: PokemonType.grass)),
+        PokemonTypeSlot(type: PokemonTypeWrapper(name: PokemonType.water)),
+      ],
+      id: 272,
+    ),
+    Pokemon(
+      name: 'Gengar',
+      types: [
+        PokemonTypeSlot(type: PokemonTypeWrapper(name: PokemonType.ghost)),
+        PokemonTypeSlot(type: PokemonTypeWrapper(name: PokemonType.poison)),
+      ],
+      id: 94,
+    ),
+    Pokemon(
+      name: 'Eevee',
+      types: [
+        PokemonTypeSlot(type: PokemonTypeWrapper(name: PokemonType.normal)),
+      ],
+      id: 133,
+    ),
   ];
 }
