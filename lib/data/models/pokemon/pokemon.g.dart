@@ -12,10 +12,12 @@ Pokemon _$PokemonFromJson(Map<String, dynamic> json) => Pokemon(
           .map((e) => PokemonTypeSlot.fromJson(e as Map<String, dynamic>))
           .toList(),
       id: json['id'] as int,
+      sprites: Sprites.fromJson(json['sprites'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PokemonToJson(Pokemon instance) => <String, dynamic>{
       'name': instance.name,
-      'types': instance.types,
+      'types': instance.types.map((e) => e.toJson()).toList(),
       'id': instance.id,
+      'sprites': instance.sprites.toJson(),
     };

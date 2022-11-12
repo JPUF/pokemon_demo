@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pokemon_demo/data/models/pokemon/pokemon.dart';
 import 'package:pokemon_demo/data/models/pokemonType/pokemon_type_slot.dart';
 
-import '../../data/models/pokemonType/pokemon_type.dart';
 import 'pokemon_type_box.dart';
 
 class SpeciesWidget extends StatelessWidget {
@@ -15,10 +14,15 @@ class SpeciesWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Image(
+        Image.network(
+          pokemon.sprites.frontDefault,
           width: 150,
-          image: AssetImage('assets/ludicolo.png'),
-          fit: BoxFit.fitWidth,
+          fit: BoxFit.fill,
+          loadingBuilder: (BuildContext context, Widget child,
+              ImageChunkEvent? loadingProgress) {
+            if (loadingProgress == null) return child;
+            return const CircularProgressIndicator();
+          },
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
