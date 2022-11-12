@@ -25,9 +25,12 @@ class SpeciesPage extends StatelessWidget {
               ),
               BlocBuilder<PokemonBloc, PokemonState>(
                 builder: (context, state) {
-                  Pokemon pokemon = PokemonRepository.pokemonList.first;
+                  Pokemon pokemon = PokemonRepository.defaultPokemon;
                   if (state is PopulatedPokemonState) {
                     pokemon = state.pokemon;
+                  }
+                  if(state is LoadingPokemonState) {
+                    return const CircularProgressIndicator();
                   }
                   return SpeciesWidget(pokemon: pokemon);
                 },

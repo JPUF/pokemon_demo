@@ -7,6 +7,8 @@ abstract class PokemonState {
 
 class InitialPokemonState extends PokemonState {}
 
+class LoadingPokemonState extends PokemonState {}
+
 class PopulatedPokemonState extends PokemonState {
   final Pokemon pokemon;
 

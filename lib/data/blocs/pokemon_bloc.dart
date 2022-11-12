@@ -18,6 +18,7 @@ class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
     GetRandomPokemon event,
     Emitter<PokemonState> emit,
   ) async {
+    emit(LoadingPokemonState());
     final networkResult = await _pokemonRepository.getRandomPokemon();
     emit(PopulatedPokemonState(networkResult));
   }
