@@ -35,6 +35,14 @@ Branches
     Convert the pokemon model class and pokemon_type enum
     flutter pub run build_runner build --delete-conflicting-outputs
     explain the PokemonType tree.
+8. Network Dio implementation
+    api.dart with Dio singleton
+    pokemon_service singleton with GET Pokemon
+    called from repository
+9. Network Loading state
+    New LoadingPokemonState concrete class
+    Show CircularProgressIndicator in SpeciesPage
+    
 
 
 
