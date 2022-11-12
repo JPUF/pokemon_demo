@@ -43,6 +43,8 @@ Branches
     New LoadingPokemonState concrete class
     Show CircularProgressIndicator in SpeciesPage
 10. Network image
+    Add fields to start consuming Sprite image URL from API
+    Show image with Image.network()
     
 
 
