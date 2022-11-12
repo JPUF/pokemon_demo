@@ -26,6 +26,9 @@ Branches
     Species widget
     Randomise with business logic in UI.
         Convert to stateful. _pokemon in the state.
+6. BLoC introduction
+    Dependencies from pub.dev, flutter_bloc, bloc, meta
+
 
 
 

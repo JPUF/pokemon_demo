@@ -1,20 +1,13 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokemon_demo/data/repositories/pokemon_repository.dart';
 
+import '../../data/blocs/pokemon_bloc.dart';
 import '../../data/models/pokemon.dart';
 import '../components/species_widget.dart';
 
-class SpeciesPage extends StatefulWidget {
+class SpeciesPage extends StatelessWidget {
   const SpeciesPage({Key? key}) : super(key: key);
-
-  @override
-  State<SpeciesPage> createState() => _SpeciesPageState();
-}
-
-class _SpeciesPageState extends State<SpeciesPage> {
-  Pokemon _pokemon = PokemonRepository.pokemonList.first;
 
   @override
   Widget build(BuildContext context) {
@@ -26,17 +19,19 @@ class _SpeciesPageState extends State<SpeciesPage> {
             children: [
               TextButton(
                 onPressed: () {
-                  final randomIndex =
-                      Random().nextInt(PokemonRepository.pokemonList.length);
-                  final randomNewPokemon =
-                      PokemonRepository.pokemonList[randomIndex];
-                  setState(() {
-                    _pokemon = randomNewPokemon;
-                  });
+                  BlocProvider.of<PokemonBloc>(context).add(GetRandomPokemon());
                 },
                 child: const Text('Randomise!'),
               ),
-              SpeciesWidget(pokemon: _pokemon),
+              BlocBuilder<PokemonBloc, PokemonState>(
+                builder: (context, state) {
+                  Pokemon pokemon = PokemonRepository.pokemonList.first;
+                  if (state is PopulatedPokemonState) {
+                    pokemon = state.pokemon;
+                  }
+                  return SpeciesWidget(pokemon: pokemon);
+                },
+              ),
             ],
           ),
         ),
