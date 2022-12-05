@@ -46,6 +46,7 @@ class _RootScaffoldState extends State<RootScaffold> {
   }
 
   List<TextButton>? _appBarActions(bool hideActions) {
+    // Generates list: [0, 1, 2, ... , # of pages]
     final indexRange = Iterable<int>.generate(_pageMap.keys.length).toList();
 
     return hideActions
