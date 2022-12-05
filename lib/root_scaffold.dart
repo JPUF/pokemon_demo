@@ -45,28 +45,6 @@ class _RootScaffoldState extends State<RootScaffold> {
     });
   }
 
-  List<TextButton>? _appBarActions(bool hideActions) {
-    // Generates list: [0, 1, 2, ... , # of pages]
-    final indexRange = Iterable<int>.generate(_pageMap.keys.length).toList();
-
-    return hideActions
-        ? null
-        : indexRange.map((index) => _appBarButton(index)).toList();
-  }
-
-  TextButton _appBarButton(int i) {
-    return TextButton(
-      onPressed: () => _onItemTapped(i),
-      child: Text(
-        _pageMap.keys.elementAt(i),
-        style: TextStyle(
-          color: Colors.white,
-          fontWeight: _selectedIndex == i ? FontWeight.bold : FontWeight.normal,
-        ),
-      ),
-    );
-  }
-
   BottomNavigationBar? _bottomNavigationBar(bool hideBottomNav) {
     return hideBottomNav
         ? null
@@ -89,5 +67,27 @@ class _RootScaffoldState extends State<RootScaffold> {
             selectedItemColor: Colors.blue,
             onTap: _onItemTapped,
           );
+  }
+
+  List<TextButton>? _appBarActions(bool hideActions) {
+    // Generates list: [0, 1, 2, ... , # of pages]
+    final indexRange = Iterable<int>.generate(_pageMap.keys.length).toList();
+
+    return hideActions
+        ? null
+        : indexRange.map((index) => _appBarButton(index)).toList();
+  }
+
+  TextButton _appBarButton(int i) {
+    return TextButton(
+      onPressed: () => _onItemTapped(i),
+      child: Text(
+        _pageMap.keys.elementAt(i),
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: _selectedIndex == i ? FontWeight.bold : FontWeight.normal,
+        ),
+      ),
+    );
   }
 }
