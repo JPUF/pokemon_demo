@@ -5,22 +5,37 @@ import 'package:pokemon_demo/data/models/pokemon_type.dart';
 
 import '../components/pokemon_type_box.dart';
 
-class TypePage extends StatelessWidget {
+class TypePage extends StatefulWidget {
   const TypePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  State<TypePage> createState() => _TypePageState();
+}
+
+class _TypePageState extends State<TypePage> {
+  PokemonType randomType = PokemonType.normal;
+
+  void setPokemonType() {
     final int randomTypeIndex = Random().nextInt(PokemonType.values.length);
-    final PokemonType randomType = PokemonType.values[randomTypeIndex];
+    setState(() {
+      randomType = PokemonType.values[randomTypeIndex];
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              Text(
-                '${randomType.name} is the best type!',
-                style: const TextStyle(fontSize: 32),
+              OutlinedButton(
+                onPressed: setPokemonType,
+                child: Text(
+                  '${randomType.name} is the best type!',
+                  style: const TextStyle(fontSize: 32),
+                ),
               ),
               const SizedBox(height: 16),
               const PokemonTypesColumn(),
