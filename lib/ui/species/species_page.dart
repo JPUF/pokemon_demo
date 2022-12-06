@@ -26,10 +26,8 @@ class _SpeciesPageState extends State<SpeciesPage> {
             children: [
               TextButton(
                 onPressed: () {
-                  final randomIndex =
-                      Random().nextInt(PokemonRepository.pokemonList.length);
-                  final randomNewPokemon =
-                      PokemonRepository.pokemonList[randomIndex];
+                  final randomIndex = Random().nextInt(PokemonRepository.pokemonList.length);
+                  final randomNewPokemon = PokemonRepository.pokemonList[randomIndex];
                   setState(() {
                     _pokemon = randomNewPokemon;
                   });
