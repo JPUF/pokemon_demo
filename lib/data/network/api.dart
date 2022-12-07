@@ -12,6 +12,7 @@ class Api {
 
   Api._internalInstance();
 
+  // Dependency Injection is better than manual Singletons!
   static final _singleton = Api._internalInstance();
 
   factory Api() => _singleton;
