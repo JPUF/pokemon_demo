@@ -5,10 +5,10 @@ part 'sprites.g.dart';
 @JsonSerializable()
 class Sprites {
   @JsonKey(name: 'front_default')
-  final String frontDefault;
+  final String defaultSprite;
 
   Sprites({
-    required this.frontDefault
+    required this.defaultSprite
   });
 
   factory Sprites.fromJson(Map<String, dynamic> json) =>

@@ -16,7 +16,7 @@ class PokemonRepository {
       PokemonTypeSlot(type: PokemonTypeWrapper(name: PokemonType.water)),
     ],
     id: 272,
-    sprites: Sprites(frontDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/272.png"),
+    sprites: Sprites(defaultSprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/272.png"),
   );
 
   final PokemonService _service = PokemonService();

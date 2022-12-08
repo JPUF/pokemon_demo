@@ -7,9 +7,9 @@ part of 'sprites.dart';
 // **************************************************************************
 
 Sprites _$SpritesFromJson(Map<String, dynamic> json) => Sprites(
-      frontDefault: json['front_default'] as String,
+      defaultSprite: json['front_default'] as String,
     );
 
 Map<String, dynamic> _$SpritesToJson(Sprites instance) => <String, dynamic>{
-      'front_default': instance.frontDefault,
+      'front_default': instance.defaultSprite,
     };

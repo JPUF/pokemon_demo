@@ -15,7 +15,7 @@ class SpeciesWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.network(
-          pokemon.sprites.frontDefault,
+          pokemon.sprites.defaultSprite,
           width: 150,
           fit: BoxFit.fill,
           loadingBuilder: (BuildContext context, Widget child,
